@@ -1,0 +1,40 @@
+/*=====================================*/
+/*
+/* Icônes 
+================ */
+
+[class^="sprite"]{background:url('../../img/front/bgd_icons.png') no-repeat;
+display:inline-block;
+vertical-align: middle;
+display:hidden;
+}
+
+.sprite-home { background-position:0px -4px; width: 125px; height: 125px;}
+
+.sprite-woman {background-position:-130px -4px; width: 125px; height: 125px;}
+
+.sprite-book {background-position:-415px -6px; width: 100px; height: 85px;}
+
+.sprite-contact {background-position:-300px 0px; width: 100px; height: 85px;}
+
+.sprite-promotion{background-position:-535px -6px; width: 100px; height: 85px;}
+
+.sprite-print{background-position:-902px -6px; width: 100px; height: 85px;}
+
+.sprite-webdesign{background-position:-650px -6px; width: 115px; height: 85px;}
+
+.sprite-illustration{background-position:-785px -6px; width: 115px; height: 85px;}
+/* Ecrans HDPI
+=================*/
+@media (min--moz-device-pixel-ratio: 1.5),
+	(-o-min-device-pixel-ratio: 3/2),
+	(-webkit-min-device-pixel-ratio: 1.5),
+	(min-device-pixel-ratio: 1.5),
+	(min-resolution: 144dpi),
+	(min-resolution: 1.5dppx) {
+	/* Images @2x */
+    [class^="sprite"]{
+    background-image:url('../../img/front/bgd_icons@2x.png');
+    -webkit-background-size:1313px 150px;
+    background-size:1313px 150px;}
+}

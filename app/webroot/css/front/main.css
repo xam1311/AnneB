@@ -1,0 +1,962 @@
+body,html{
+  margin:0;
+  padding:0;
+  color:#FFF;
+  font-family: 'Raleway', sans-serif;
+}
+
+h1,h2,h3{
+  color:#1f1f1f;
+  margin:0;
+  padding:0;
+  font-weight: 300;
+}
+h1{
+  font-size:2.1em;
+}
+p{
+  margin:0;
+}
+
+.row{
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/*
+/** Formulaire
+**/
+
+
+    .form-contact-content .input-group-addon
+    {
+      border-radius: 0;
+      border-color:#8f8f8f;
+    }
+
+    .form-contact-content .form-control{
+      border-radius: initial;
+      border-color:#8f8f8f;
+    }
+
+    .form-contact-content .form-group{
+      height:100%;
+    }
+
+  .form-contact-content .form-select select{
+      border:none;
+      outline:none;
+      display: inline-block;
+      width:100%;
+      -webkit-appearance:none;
+      -moz-appearance:none;
+      appearance:none;
+      cursor:pointer;
+      background-color: #fff;
+      background-image: none;
+      border: 1px solid #8f8f8f;
+  }
+  .form-contact-content .form-select p{
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+
+  .form-contact-content .form-select label
+  {
+    display:inline;
+    font-weight: 500;
+  }
+
+  .form-contact-content .form-select label:after {
+      content:'\25be';
+      color:#fff;
+      font-size: 2em;
+      right:23px;
+      top:20px;
+      padding:0 0 2px;
+      position:absolute;
+      pointer-events:none;
+    }
+
+  .form-contact-content .form-select  label:before {
+    content:'';
+    background-color:#624cac;
+    width:30px;
+    height:30px;
+    position:absolute;
+    right:17px;
+    top:27px;
+    pointer-events:none;
+    display:block;
+  }
+
+  .form-contact-content label{
+    margin-top: 10px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .form-textarea label{
+    margin-top: 0px;
+    text-transform: uppercase;
+  }
+
+  .form-textarea textarea{
+    height:100%;
+    resize:none;
+    border-radius: 0;
+    border-color:#8f8f8f;
+  }
+
+
+  .btn-send-form{
+    color:#000;
+    border-radius: 0;
+    text-transform: uppercase;
+    background-color:#FFFFFF;
+    border:1px solid #747474;
+    padding:15px;
+    margin-top: 15px;
+    -moz-transition: background-color 0.5s ease,
+              border 1s ease;
+    -o-transition: background-color 0.5s ease,
+              border 1s ease;
+    -webkit-transition:background-color 0.5s ease,
+              border 1s ease;
+    transition: background-color 0.5s ease,
+              border 1s ease;
+  }
+
+
+  .btn-send-form:hover{
+    background-color:#000;
+    color:#FFFFFF;
+    border-color:#747474;
+  }
+
+
+    /**
+    Modification liens
+    **/
+    :focus {
+      outline: none;
+    }
+    .container,.container-fluid{
+        padding:0;
+        margin:0;
+    }
+    .navbar-brand>img{
+        display:inline;
+    }
+
+    a, a:hover, a:focus{
+      text-decoration: none;
+      color:#000000;
+    }
+
+/**
+ Pour retirer l'icône triangle sur details
+**/
+summary::-webkit-details-marker {
+    color: #69c773;
+    font-size: 200%;
+    display: none;
+}
+
+/**
+/* Mixins
+*/
+
+.color-blue{
+  color:#05dee9;
+}
+
+.color-mauve{
+  color:#624cac;
+}
+
+.color-pink{
+ color:#e51369;
+}
+.bg-black{
+  background-color: #3b3b3b;
+  color:#FFFFFF;
+}
+.bg-blue{
+  background-color:#00c2cb;
+  color:#FFFFFF;
+}
+
+
+.bg-blue h1,.bg-blue h2,.bg-blue h3,.bg-blue h4,
+.bg-black h1,.bg-black h2,.bg-black h3,.bg-black h4{
+  color:#FFFFFF;
+}
+
+/*
+    Sometimes the sub menus get too large for the page and prevent the menu from scrolling, limiting functionality
+    A quick fix is to change .side-menu to
+
+    -> position:absolute
+
+    and uncomment the code below.
+    You also need to uncomment
+
+    -> <div class="absolute-wrapper"> </div> in the html file
+
+    you also need to tweek the animation. Just uncomment the code in that section
+    --------------------------------------------------------------------------------------------------------------------
+    If you want to make it really neat i suggest you look into an alternative like http://areaaperta.com/nicescroll/
+    This will allow the menu to say fixed on body scoll and scoll on the side bar if it get to large
+*/
+/*.absolute-wrapper{
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background-color: #f8f8f8;
+    border-right: 1px solid #e7e7e7;
+}*/
+
+.side-menu {
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  background-color: #282828;
+  border-right: 1px solid #282828;
+}
+.side-menu .navbar {
+  border: none;
+}
+
+.side-menu .navbar-inverse{
+  background-color:#282828;
+}
+.side-menu .navbar-inverse .navbar-nav>.active>a:focus,
+.side-menu .navbar-inverse .navbar-nav>.active>a,
+.side-menu .navbar-inverse .navbar-nav>.active>a:focus,
+.side-menu .navbar-inverse .navbar-nav>.active>a:hover {
+  background-color:#09d5df;
+}
+.side-menu .navbar-header {
+  width: 100%;
+  border-bottom: 1px solid #282828;
+}
+
+.side-menu .navbar-nav{
+    padding-top: 35px;
+}
+.side-menu .navbar-nav .active a {
+  background-color: #09d5df;
+}
+
+.side-menu .navbar-brand{
+  height:140px;
+  width:100%;
+}
+.side-menu .brand-name-wrapper p{
+  text-align: center;
+  width: 270px;
+  margin:0 15px;
+  padding-bottom:15px;
+  border-bottom:1px solid #4e4e4e;
+  color:#bcbbbb;
+}
+.side-menu .brand-name-wrapper span{
+  text-transform: uppercase;
+  font-weight:500;
+  color:#FFFFFF;
+}
+.side-menu .navbar-nav li {
+  display: block;
+  width: 300px;
+  border-bottom: 1px dashed #4e4e4e;
+  text-transform:uppercase;
+}
+
+.side-menu .navbar-nav li:last-child{
+  border:0;
+}
+.side-menu .navbar-nav li a {
+  color:#FFFFFF;
+  padding:15px 15px 15px 25px;
+  -moz-transition: font-weight 0.5s ease,
+              border 1s ease;
+  -o-transition: font-weight 0.5s ease,
+              border 1s ease;
+  -webkit-transition font-weight 0.5s ease,
+              border 1s ease;
+  transition: font-weight 0.5s ease,
+              border 1s ease;
+}
+
+.side-menu .navbar-nav li a:hover{
+  font-weight: 600;
+}
+
+.side-menu #dropdown {
+  border: 0;
+  margin-bottom: 0;
+  border-radius: 0;
+  background-color: transparent;
+  box-shadow: none;
+}
+.side-menu #dropdown .caret {
+  float: right;
+  margin: 9px 5px 0;
+}
+.side-menu #dropdown .indicator {
+  float: right;
+}
+.side-menu #dropdown > a {
+  border-bottom: 1px solid #e7e7e7;
+}
+.side-menu #dropdown .panel-body {
+  padding: 0;
+  background-color: #f3f3f3;
+}
+.side-menu #dropdown .panel-body .navbar-nav {
+  width: 100%;
+}
+.side-menu #dropdown .panel-body .navbar-nav li {
+  padding-left: 15px;
+  border-bottom: 1px solid #e7e7e7;
+}
+.side-menu #dropdown .panel-body .navbar-nav li:last-child {
+  border-bottom: none;
+}
+.side-menu #dropdown .panel-body .panel > a {
+  margin-left: -20px;
+  padding-left: 35px;
+}
+.side-menu #dropdown .panel-body .panel-body {
+  margin-left: -15px;
+}
+.side-menu #dropdown .panel-body .panel-body li {
+  padding-left: 30px;
+}
+.side-menu #dropdown .panel-body .panel-body li:last-child {
+  border-bottom: 1px solid #e7e7e7;
+}
+.side-menu .brand-name-wrapper {
+  min-height: 135px;
+}
+.side-menu .brand-name-wrapper .navbar-brand {
+  display: block;
+}
+
+/* Main body section */
+.side-body {
+  color:#1f1f1f;
+  margin-left: 300px;
+}
+
+.side-body .row{
+  padding: 35px 0;
+}
+
+.side-body p{
+    font-size:1.2em;
+}
+
+
+/* Main Page Content */
+.side-body .pageContent{
+  margin:0 75px;
+  padding-top: 15px;
+}
+
+/**
+  Element Portfolio
+*/
+
+    .grid .mix{
+      margin-bottom: 25px !important;
+    }
+    .portfolioWrapper #portfolio {
+      left: -15px;
+      margin-left: -15px;
+      margin-right: -15px;
+      padding:0;
+    }
+    /** Pour home pour avoir les images sans les filtres */
+    .homePage #portfolio .mix{
+          display:block;
+          padding-left: 15px;
+          padding-right: 15px;
+    }
+
+    .homePage .portfolioWrapper{
+        padding:0;
+    }
+
+    /** Pour toutes les autres pages portfolio **/
+  .pageContent .portfolioWrapper{
+      padding:0;
+  }
+
+  .side-body .portfolioTags{
+      padding:0;
+     margin-bottom: 35px;
+  }
+
+
+    .side-body #tags{
+      font-family: 'Montserrat', sans-serif;
+      list-style-type: none;
+      text-align: left;
+      border-bottom:1px solid #e9e9e9;
+      padding-bottom: 15px;
+      padding-left: 0px;
+      margin-bottom: 35px;
+      margin-left: 0px;
+    }
+    .side-body #tags li {
+      cursor: pointer;
+      display: inline-block;
+      text-align: center;
+      margin-left: 15px;
+      border-left: 3px solid #e5e5e5;
+      text-transform: uppercase;
+    }
+
+    .side-body #tags li:first-child {
+      border-left:none;
+      padding:0;
+      margin-left: 0px;
+    }
+
+
+     .side-body #tags li:hover {
+      color:#00c2cb;
+    }
+
+
+    .side-body #tags li span{
+      display:inline-block;
+      margin-left: 15px;
+    }
+
+    .side-body #tags li:first-child span{
+      margin-left: 0px;
+    }
+
+
+    .side-body #tags li.active span {
+      color:#8f8f8f;
+      font-weight: 700;
+      border-bottom:5px solid #8f8f8f;
+      padding-bottom: 3px;
+    }
+
+    /** Bouton pour affichage liste des projets**/
+    .side-body #tags .changeLayout{
+      position: absolute;
+      right:15px;
+      border-left:0;
+    }
+
+
+    /**
+    /* headerPage commun
+    */
+
+    .side-body .headerPage{
+      padding:       20px 0;
+    }
+
+    .side-body .headerPage .title-page{
+      word-wrap:break-word;
+    }
+
+     .side-body .headerPage .title-page>div{
+      padding-left:0;
+    }
+
+    .side-body .headerPage .title-page h1{
+      font-weight: 600;
+      margin-bottom:7px;
+    }
+
+    .side-body .headerPage .title-page h2{
+      color:#8f8f8f;
+      font-size:1.6em;
+    }
+
+    .side-body .header-contact a{
+      display:block;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .side-body .header-contact a span{
+      font-weight: bold;
+    }
+
+    .side-body .header-contact a.contactMe{
+      color:#000;
+      border:1px solid #747474;
+      padding:15px;
+      font-weight: 500;
+      -moz-transition: background-color 0.5s ease,
+                  border 1s ease;
+      -o-transition: background-color 0.5s ease,
+                  border 1s ease;
+      -webkit-transition:background-color 0.5s ease,
+                  border 1s ease;
+      transition: background-color 0.5s ease,
+                  border 1s ease;
+    }
+
+    .side-body .header-contact a.contactMe:hover{
+      background-color:#000000;
+      color:#FFFFFF;
+      border-color:#747474;
+    }
+
+    .side-body .header-social{
+      margin-top: 10px;
+      text-align: right;
+    }
+    .side-body .header-social a{
+      color:#02cfd9;
+      margin-left: 15px;
+    }
+
+    /**
+    /* Page Accueil
+    */
+    .side-body .homePage-header{
+      border-bottom: 1px solid #3b3b3b;
+    }
+
+    .side-body .homePage-pres h3{
+      margin-bottom: 25px;
+    }
+
+    .side-body .homePage-resumate {
+      text-align: left;
+      }
+
+    .side-body .homePage-resumate .homePage-resumContent{
+      padding: 0 75px;
+    }
+
+    .side-body .homePage-resumate h4{
+        text-transform: uppercase;
+        font-size: 1.2em;
+    }
+    .side-body .homePage-resumate span{
+      display:block;
+      border-bottom: 5px solid #FFFFFF;
+      width:35px;
+      margin-bottom: 30px;
+    }
+
+    .side-body .homeFooter-contact .contactMeFooter{
+      padding-left: 0;
+    }
+
+    .side-body .homeFooter-contact a.contactMe{
+      display:block;
+      text-transform: uppercase;
+      text-align: center;
+      color:#FFFFFF;
+      border:1px solid #FFFFFF;
+      padding:15px;
+      font-weight: 500;
+      -moz-transition: background-color 0.5s ease,
+                  border 1s ease;
+      -o-transition: background-color 0.5s ease,
+                  border 1s ease;
+      -webkit-transition:background-color 0.5s ease,
+                  border 1s ease;
+      transition: background-color 0.5s ease,
+                  border 1s ease;
+    }
+    .side-body .homeFooter-contact a.contactMe:hover{
+      background-color:#00c2cb;
+      border-color:#4dd4db;
+    }
+
+/**
+/* Page Know Me
+*/
+
+.side-body .knowPage-title{
+  border-bottom:1px solid #e9e9e9;
+}
+
+.side-body .knowPage-content div{
+  padding: 15px 0 0 0;
+}
+
+.side-body .knowPage-content{
+  padding: 10px 0;
+}
+.side-body .knowPage-content p:first-child{
+  font-size:1.2em;
+  margin-bottom: 10px;
+}
+.side-body .knowPage-content-illus .row{
+  margin-bottom: 60px;
+}
+
+.side-body .knowPage-outside{
+  text-align: center;
+}
+.side-body .knowPage-outside h3{
+  margin-bottom: 25px;
+}
+
+.side-body .knowPage-outside figure{
+    padding:0 15px;
+}
+
+.side-body .knowPage-outside figcaption{
+   text-align: left;
+}
+
+.side-body .knowPage-outside figcaption h4{
+    text-align: center;
+    margin-top: 30px;
+}
+
+.side-body .knowPage-content-illus .svg-wrap #pen,
+.side-body .knowPage-content-illus .svg-wrap #arrow1,
+.side-body .knowPage-content-illus .svg-wrap #arrow2,
+.side-body .knowPage-content-illus .svg-wrap #psd,
+.side-body .knowPage-content-illus .svg-wrap #screen
+{
+  opacity:0;
+  }
+
+/**
+/* Page CV
+*/
+
+.side-body .cvPage .row{
+  padding:       20px 0 0 0;
+}
+
+ .side-body .cvPage .cvPage-header{
+ border-bottom: 1px solid #3b3b3b;
+ padding:       20px 0;
+ }
+
+
+  /** Page Cv compétences **/
+
+
+ .side-body .pagecv-competences article{
+   border-bottom: 1px solid #ebebeb;
+   padding-bottom: 20px;
+ }
+
+ .side-body .pagecv-competences article:last-child{
+   border-bottom: none;
+    margin-bottom: 30px;
+ }
+  .side-body .pagecv-competences .vertical-align {
+   display: flex;
+   flex-direction: row;
+ }
+  .side-body .pagecv-competences .vertical-align > [class^="col-"],
+  .side-body .pagecv-competences .vertical-align > [class*=" col-"] {
+   display: flex;
+   align-items: center;
+ }
+ .side-body .pagecv-competences h3{
+   color:#00c2cb;
+   font-weight: 500;
+   padding-bottom: 10px;
+ }
+ .side-body .pagecv-competences span{
+   display:block;
+   border-bottom: 5px solid #000;
+   color:#000000;
+   width:35px;
+ }
+ .side-body .pagecv-competences li{
+   font-size: 1.1em;
+   margin-top: 10px;
+ }
+
+  /** Page Cv expertises **/
+
+ .side-body .pagecv-expertises{
+   background-color:#3b3b3b;
+   text-transform: uppercase;
+   padding-bottom: 60px;
+ }
+
+  .side-body .pagecv-expertises header{
+   padding-left: 13px;
+ }
+ .side-body .pagecv-expertises h3{
+   font-size: 1.2em;
+   font-weight: 600;
+   padding-bottom: 10px;
+ }
+
+ .side-body .pagecv-expertises span{
+   display:block;
+   border-bottom: 5px solid #FFFFFF;
+   width:35px;
+   margin-bottom: 55px;
+ }
+
+ .side-body .pagecv-expertises figure{
+  text-align: center;
+}
+ .side-body .pagecv-expertises figcaption{
+  margin-top: 15px;
+ }
+
+
+ /** Page Cv expériences **/
+
+ .side-body .pagecv-experiences .row:first-child{
+   padding-top:       45px;
+ }
+ .side-body .pagecv-experiences .vertical-align {
+  display: flex;
+  flex-direction: row;
+}
+ .side-body .pagecv-experiences .vertical-align > [class^="col-"],
+ .side-body .pagecv-experiences .vertical-align > [class*=" col-"] {
+  display: flex;
+  align-items: center;
+}
+.side-body .pagecv-experiences header{
+  text-transform: uppercase;
+}
+.side-body .pagecv-experiences small{
+  font-size: 1.2em;
+}
+
+  .side-body .pagecv-experiences h3{
+    font-size: 1.2em;
+    font-weight: 600;
+    padding-bottom: 10px;
+  }
+  .side-body .pagecv-experiences h4{
+    text-transform: uppercase;
+    font-size: 1.6em;
+  }
+  .side-body .pagecv-experiences h5{
+    color:#09d5df;
+    font-size: 1.4em;
+  }
+
+ .side-body .pagecv-experiences span{
+   display:block;
+   border-bottom: 5px solid #000;
+   color:#000;
+   width:35px;
+ }
+
+ .side-body .pagecv-experiences article{
+   border-bottom: 1px solid #ebebeb;
+   padding-bottom: 55px;
+ }
+ .side-body .pagecv-experiences article p{
+   padding-bottom: 10px;
+ }
+
+
+/** Section diplômes CV **/
+
+ .side-body .pagecv-diplomes .row{
+  padding:35px 75px;
+ }
+ .side-body .pagecv-diplomes h3{
+   text-transform: uppercase;
+   font-size: 1.2em;
+   font-weight: 600;
+   padding-bottom: 10px;
+ }
+
+ .side-body .pagecv-diplomes span{
+   display:block;
+   border-bottom: 5px solid #FFFFFF;
+   width:35px;
+   margin-bottom: 55px;
+ }
+ .side-body .pagecv-diplomes h4{
+   font-size: 1.4em;
+   text-transform: uppercase;
+   margin-bottom: 0;
+ }
+ .side-body .pagecv-diplomes small{
+  display:block;
+  color:#FFFFFF;
+  border-bottom: 2px solid #4dd4db;
+  margin-bottom: 20px;
+  padding-bottom: 18px;
+ }
+
+
+
+/**
+/* Page Projet
+*/
+
+.side-body .headerPage .tagPage-header{
+  border-bottom: 1px solid #3b3b3b;
+}
+
+.side-body .title-page .pageprojet-social
+{
+  text-align: right;
+}
+
+
+  .side-body .title-page .social-button
+  {
+    color:#02cfd9;
+    display: inline-block;
+    margin-right: 2px;
+  }
+
+  .side-body .pageprojet-infos{
+    padding: 15px 75px;
+  }
+
+  .side-body .pageprojet-infos   > [class^="col-"]{
+    padding: 0px
+  }
+
+  .side-body .pageprojet-infos ul{
+    list-style-type: none;
+    display: inline-block;
+    padding-left:15px;
+    font-weight: 600;
+  }
+
+  .side-body .pageprojet-infos li a{
+    color:#FFFFFF;
+  }
+
+  .side-body .pageprojet-infos .tagsProject{
+    border-right: 3px solid #FFFFFF;
+    padding-left: 0px;
+    padding-right:15px;
+    vertical-align:5px;
+    line-height: 33px;
+  }
+
+  .side-body .pageprojet-infos .tagsProject li a{
+    padding-bottom:5px;
+    border-bottom:2px solid #FFFFFF;
+  }
+
+  .side-body .pageprojet-infos .paramsProject{
+    margin-bottom: 0;
+  }
+
+  .side-body .pageprojet-infos .paramsProject li{
+    display:inline-block;
+    padding-left: 10px;
+  }
+
+  .side-body .pageprojet-infos .paramsProject li a{
+    padding-right: 15px;
+    padding-top: 15px;
+    border-right :3px solid #FFFFFF;
+    height:30px;
+  }
+
+  .side-body .pageprojet-infos .paramsProject span{
+    padding-left: 10px;
+    vertical-align: 5px;
+  }
+
+  .side-body .pageprojet-infos a.linkProject{
+    display: block;
+    text-align: center;
+    background-color:#FFFFFF;
+    border:1px solid #747474;
+    color:#000000;
+    font-weight: 500;
+    padding:15px 25px;
+    -webkit-transition:background-color 0.5s ease,
+              border 1s ease;
+    transition: background-color 0.5s ease,
+              border 1s ease;
+  }
+
+  .side-body .pageprojet-infos a.linkProject:hover{
+    background-color: #3b3b3b;
+    color:#FFFFFF;
+    border-color:#747474;
+  }
+
+
+  /**
+  /* Contenu de la description Projet
+  /**/
+  .side-body .pageprojet-content .row{
+    padding:10px 0;
+  }
+  .side-body .pageprojet-content article > [class^="col-"]{
+    padding:0;
+  }
+  .side-body .pageprojet-content p{
+    font-weight: 500;
+    font-size: 1.2em;
+  }
+
+  .side-body .pageprojet-content-description .row > [class^="col-"]:first-child{
+    padding:0;
+  }
+
+  .side-body .pageprojet-contentslider > [class^="col-"]{
+    padding:0;
+  }
+
+/**
+/* Page contact
+*/
+.side-body .cvPage-header{
+  border-bottom: 1px solid #3b3b3b;
+}
+
+/**
+/* Element footer
+*/
+
+    #footermain{
+      padding-top: 45px;
+      color:#FFFFFF;
+      background-color: #3b3b3b;
+    }
+
+    #footermain .row{
+      padding: 0;
+    }
+
+    #footermain .footerSlogan p:first-child{
+      border-top:2px dashed #4e4e4e;
+      padding-top: 20px;
+    }
+
+    #footermain .footerSlogan p{
+      margin-bottom: 20px;
+      font-size: 0.8em;
+    }
+
+
+    #footermain h5{
+        text-transform: uppercase;
+        padding-left: 40px;
+        color:#FFFFFF;
+    }
+
+    #footermain a{
+      color:#FFFFFF;
+    }
+
+    #footermain ul{
+        color:#d9d9d9;
+        list-style-type:none;
+    }

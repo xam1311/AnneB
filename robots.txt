@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /connexion
+Disallow: /password
+Sitemap: http://anne-b.fr/sitemap.xml

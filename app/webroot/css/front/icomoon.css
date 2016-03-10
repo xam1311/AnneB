@@ -1,0 +1,117 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot?n9qjql');
+	src:url('fonts/icomoon.eot?n9qjql#iefix') format('embedded-opentype'),
+		url('fonts/icomoon.ttf?n9qjql') format('truetype'),
+		url('fonts/icomoon.woff?n9qjql') format('woff'),
+		url('fonts/icomoon.svg?n9qjql#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-1x {
+  font-size: 1.3em;
+}
+.icon-2x {
+  font-size: 2em;
+}
+
+.icon-2xl {
+  font-size: 2.5em;
+}
+.icon-3x {
+  font-size: 3em;
+}
+.icon-4x {
+  font-size: 4em;
+}
+.icon-5x {
+  font-size: 5em;
+}
+.icon-6x {
+  font-size: 6em;
+}
+.icon-7x {
+  font-size: 7em;
+}
+.icon-8x {
+  font-size: 8em;
+}
+
+.icon-gestionequipe:before {
+	content: "\e913";
+}
+.icon-suiviprojet:before {
+	content: "\e912";
+}
+.icon-interface:before {
+	content: "\e914";
+}
+.icon-justify:before {
+	content: "\e911";
+}
+.icon-ergonomie:before {
+	content: "\e910";
+}
+.icon-adobe:before {
+	content: "\e900";
+}
+.icon-axure:before {
+	content: "\e901";
+}
+.icon-cookie:before {
+	content: "\e902";
+}
+.icon-encart_pub:before {
+	content: "\e903";
+}
+.icon-html:before {
+	content: "\e904";
+}
+.icon-identite_visuelle:before {
+	content: "\e905";
+}
+.icon-mobile:before {
+	content: "\e906";
+}
+.icon-newsletter:before {
+	content: "\e907";
+}
+.icon-note:before {
+	content: "\e908";
+}
+.icon-pencil:before {
+	content: "\e909";
+}
+.icon-pinterest:before {
+	content: "\e90a";
+}
+.icon-responsive_design:before {
+	content: "\e90b";
+}
+.icon-series:before {
+	content: "\e90c";
+}
+.icon-twitter:before {
+	content: "\e90d";
+}
+.icon-viewflux:before {
+	content: "\e90e";
+}
+.icon-webdesign:before {
+	content: "\e90f";
+}

@@ -1,0 +1,37 @@
+.row{
+	padding: 15px 0;
+}
+
+.checkbox label, .radio label{
+	padding-left: 10px;
+}
+
+/** Pour modification lien button dans navbar button édition catégorie/projet **/
+ul.navbar-nav li
+{
+ margin-right: 5px;
+ display:inline;
+}
+
+ul.navbar-nav li a button[type=submit]{
+	padding: 15px;
+	border:0;
+	border-radius: 0;
+}
+
+.table-responsive .glyphicon{
+  margin: 0 5px;
+  font-size: 18px;
+}
+/** Pour modification liens action dans page index Projets **/
+ul.dropdown-menu li button{
+  padding-left:20px;
+  border:0;
+  background: transparent;
+}
+
+/** Pour modification du helper taxonomy **/
+a.delTaxo{
+	color:#FFFFFF;
+	margin-left: 10px;
+}

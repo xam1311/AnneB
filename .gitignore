@@ -10,8 +10,16 @@
 /app/tmp/*
 /app/Config/core.php
 /app/Config/database.php
+/app/Config/email.php
 /vendors/*
-
+/SgraphPerso/
+.htaccess
+error_log
+/app/webroot/.htaccess
+/app/config/schema/.htaccess
+/app/webroot/img/thumbs/
+/app/webroot/img/uploads/
+/app/webroot/files/
 # =========================
 # Operating System Files
 # =========================
