@@ -1,0 +1,8 @@
+{
+
+
+    "require": {
+        "abraham/twitteroauth": "^0.6.2",
+        "slywalker/debug_kit_plus": "^1.1"
+    }
+}

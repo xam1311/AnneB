@@ -2,9 +2,9 @@
 
 class UsersController extends AppController {
 
- public $name  = 'Users';
- public $uses  = array('User','Invitation');
- public $helpers = array('Paginator');
+public $name  = 'Users';
+public $uses  = array('User','Invitation');
+public $helpers = array('Paginator');
 
         public function login() {
             $this->set('title_for_layout','Connexion');
@@ -19,7 +19,7 @@ class UsersController extends AppController {
                         $this->Session->setFlash('Vous êtes maintenant connecté à l\'administration','notif',array('type'=>'success'));
                         $this->redirect($this->Auth->redirectUrl(array('controller'=>'options','action'=>'index','admin'=>true)));
                     endif;
-		            
+
 		        } else {
 		            $this->Session->setFlash('Nom d\'user ou mot de passe invalide, réessayer','front_notif',array('type'=>'danger'));
 		        }
@@ -58,7 +58,7 @@ class UsersController extends AppController {
                         $password = substr(md5(uniqid(rand(),true)),0,8);
                         /* Envoi du mot de passe en mail à l'utilisateur */
                         $this->User->saveField('password',$password);
-                        App::uses('CakeEmail','Network/Email');  
+                        App::uses('CakeEmail','Network/Email');
                         $mail = new CakeEmail();
                                     $mail ->from('nepasrepondre@anne-b.fr')
                                          ->config('smtp')
@@ -68,7 +68,7 @@ class UsersController extends AppController {
                                          ->template('renewmdp','general')
                                          ->viewVars(array('username'=>$user['User']['username'],'password'=>$password))
                                          ->send();
-                        $this->Session->setFlash("Votre mot de passe a bien été réinitialisé, voici votre 
+                        $this->Session->setFlash("Votre mot de passe a bien été réinitialisé, voici votre
                             nouveau mot de passe : $password , un email de confirmation vient de vous être envoyé ",'front_notif',array('type'=>'success'));
                         $this->redirect(array('controller'=>'pages','action'=>'home'));
                     }else{
@@ -100,7 +100,7 @@ class UsersController extends AppController {
                                          ->send();
                                     $this->request->data['User']['email']=null;
                                     $this->Session->setFlash("Un email de réinitialisation mot de passe vous a été envoyé" ,"front_notif");
-                                    
+
                                  }
                     else:
                     $this->Session->setFlash('Vous devez entrer un email','front_notif',array('type'=>'danger'));
@@ -138,14 +138,14 @@ class UsersController extends AppController {
             $token = explode('-',$token);
             $user = $this->User->find('first',array('conditions'=>array('id'=>$token[0],'MD5(User.password)'=>$token[1],'active'=>0)));
             $mailAdmin='anne@anne-b.fr';
-            if(!empty($user)):             
+            if(!empty($user)):
                     $this->User->id = $user['User']['id'];
                     if($this->User->saveField('active','1')):
                      $this->Session->setFlash('Le visiteur a été activé pour l\'accès privé','notif');
-                      /* on réattribue un mot de passe pour que le visiteur y a accès*/              
+                      /* on réattribue un mot de passe pour que le visiteur y a accès*/
                      $password = substr(md5(uniqid(rand(),true)),0,8);
                      $this->User->saveField('password',$password);
-                    
+
 
                     $user= $this->User->read();
                     /*Envoi mail au visiteur pour l'accès privé */
@@ -170,9 +170,9 @@ class UsersController extends AppController {
                     else:
                     $this->Session->setFlash('Un problème est arrivé le visiteur ne peut pas avoir l\'accès privé','notif');
                     endif;
-                        
+
             else:
-                $this->Session->setFlash('Le lien est invalide ou visiteur déjà activé','notif',array('type'=>'danger'));   
+                $this->Session->setFlash('Le lien est invalide ou visiteur déjà activé','notif',array('type'=>'danger'));
             endif;
             $this->redirect('/');
         }
@@ -211,14 +211,14 @@ class UsersController extends AppController {
             if($d['password'] != $d['passwordconfirm']){
                 $this->Session->setFlash('Les mots de passes ne correspondent pas','notif',array('type'=>'danger'));
             }
-            else{   
-                   
+            else{
+
                     if(!empty($d['password']) and !empty($d['passwordconfirm']) and !empty($d['username'])) {
                             if ($this->User->save($d,array('fieldList'=>array('password','username','email','active')))) {
                                 $this->Session->setFlash('Les modifications ont été sauvegardé','notif');
                                 $this->redirect(array('controller'=>'users','action'=>'index'));
                             } else {
-                               $this->Session->setFlash('Les modifications n\'ont pas été sauvegardé. Merci de réessayer.','notif',array('type'=>'danger')); 
+                               $this->Session->setFlash('Les modifications n\'ont pas été sauvegardé. Merci de réessayer.','notif',array('type'=>'danger'));
                             }
                     }
                     else{

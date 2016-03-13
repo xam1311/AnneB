@@ -48,7 +48,14 @@ class AppController extends Controller {
         'Auth' =>array(
             'authError' => 'Pensiez-vous réellement que vous étiez autorisés à voir cela ?',
             'logoutRedirect' => array('controller' => 'pages', 'action' => 'home')
+					),
+				'DebugKit.Toolbar' => array(
+            'panels' => array(
+                'DebugKitPlus.Apc',
+                'DebugKitPlus.Configure',
+                'DebugKitPlus.RequestPlus'
             )
+        )
         );
 
     public function beforeFilter() {
@@ -63,14 +70,14 @@ class AppController extends Controller {
 
         }
         if(isset($this->request->params['prefix']) && $this->request->params['prefix'] == 'admin')
-		{ 
+		{
 		$this->layout='admin';
 		}
 
         $Auth = $this->Auth->user();
         $this->set(compact('Auth'));
-       
-       
+
+
     }
 
     function isAuthorized($user)
@@ -84,7 +91,7 @@ class AppController extends Controller {
             'visitor' =>5
             );
         if(isset($roles[$this->request->params['prefix']]))
-        {   
+        {
             $lvlAction = $roles[$this->request->params['prefix']];
             $lvlUser = $roles[$user['role']];
             if($lvlUser >= $lvlAction){

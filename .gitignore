@@ -14,6 +14,7 @@
 /vendors/*
 /SgraphPerso/
 .htaccess
+anneb_db.sql
 error_log
 /app/webroot/.htaccess
 /app/config/schema/.htaccess
