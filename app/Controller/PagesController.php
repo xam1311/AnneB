@@ -81,13 +81,12 @@ class PagesController extends AppController {
 	}
 
 	public function home() {
-		
 
-
-		 $slider= $this->Option->find('first',array('condition'=>array('name'=>'slideProject')));
+		 $slider = $this->Option->find('first',array('condition'=>array('name'=>'slideProject')));
 
          /* Extraction id pour sélection slider */
-         $ids=Hash::extract(json_decode($slider['Option']['value'],true),'{n}.id');
+         $ids = Hash::extract(json_decode($slider['Option']['value'],true),'{n}.id');
+
          $fields = array('Project.media_id','Project.hidden','Project.published','Project.slug','Project.order','Project.short_description','Project.name','Project.created','Project.website','Project.id','Category.id','Category.name','Category.slug','Thumb.file','Thumbnail.file');
          if(!$ids):
 
@@ -96,19 +95,19 @@ class PagesController extends AppController {
          else:
          $nbrSlide = Hash::extract(json_decode($slider['Option']['value'],true),'{n}.nbrSlide');
 
-     	 
+
      	 /* on récupère les slides sélectionnés */
          $portfolioHome = $this->Project->find('all',array('conditions'=>array(
     	'Project.id'=>$ids,'Project.hidden'=>0,'Project.published'=>1),'fields'=>$fields,'contain'=>array('Category','Thumbnail','Thumb'),'limit'=>$nbrSlide[0]));
 
          /* Condition pour vérifier le nombre de projets à ajouter si le choix en nombre est supérieur au nombre de projets sélectionnés dans le slider */
          $nbrReste = $nbrSlide[0]-count($ids);
-		
+
 				 if($nbrReste > 0 ) :
 
 		         $slidesReste = $this->Project->find('all',array('conditions'=>array(
-		    	'Project.id NOT'=>$ids,'Project.hidden'=>0,'Project.published'=>1 ),'fields'=>$fields,'contain'=>array('Category','Thumbnail','Thumb'),'order'=>array('Project.created DESC'),'limit'=>$nbrReste));  
-		        
+		    	'Project.id NOT'=>$ids,'Project.hidden'=>0,'Project.published'=>1 ),'fields'=>$fields,'contain'=>array('Category','Thumbnail','Thumb'),'order'=>array('Project.created DESC'),'limit'=>$nbrReste));
+
 			         foreach($slidesReste as $data):
 			         	 array_push($portfolioHome,$data);
 			         endforeach;
@@ -133,9 +132,9 @@ class PagesController extends AppController {
          endif;
 
 
-        
 
-		
+
+
 	}
 
 	public function footerIndex()
@@ -223,6 +222,6 @@ class PagesController extends AppController {
 					endif;
 		endif;
 
-		
+
 	}
 }

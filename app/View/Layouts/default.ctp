@@ -28,6 +28,7 @@
 		echo $this->Html->css(array('front/bootstrap.min.css','front/main.css','front/responsive.css','front/icomoon.css','front/sprite.css'));
 		echo $this->fetch('css');
 		echo $this->Html->script(array('http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js','front/bootstrap.min.js','front/velocity.js','front/velocityui.js','front/main.js','http://localhost:35729/livereload.js'),array('inline'=>false,'block'=>'bHeadscript'));?>
+<?php if(Configure::read('debug') == 0 ):?>
 		<!-- Google Analytics -->
 		<script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -40,6 +41,20 @@
 
 		</script>
 <!-- End Google Analytics -->
+<?php endif;?>
+<?php if(Configure::read('debug') > 0 ):?>
+
+<style media="screen">
+	.cake-debug-output{
+		background-color: #303030;
+		padding: 10px;
+	}
+	.cake-debug{
+		font-size: 1.1em;
+		margin-top:15px;
+	}
+</style>
+<?php endif;?>
 
 </head>
 <body>
