@@ -1,5 +1,7 @@
 <?php
+
 App::uses('AppController','Controller');
+
 class ProjectsController extends AppController {
 
  public $name  = 'Projects';
@@ -67,14 +69,19 @@ class ProjectsController extends AppController {
 
     {
         $this->Project->contain(array('Term','Category','Thumbnail','Thumb'));
+
         $private = '';
         if(!$catid):
+
             throw new NotFoundException('Aucune catégorie ne correspond à cet ID');
+
         else:
+
             if($catid and $slug):
 
             $role =$this->Auth->user('role');
             $category= $this->Project->Category->find('first',array('conditions'=>array('id'=>$catid),'fields'=>array('Category.name','Category.description','Category.summary','Category.slug')));
+
             if(!$category):
 
             throw new NotFoundException('Aucune catégorie ne correspond à cet ID');

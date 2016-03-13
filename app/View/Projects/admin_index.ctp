@@ -104,12 +104,20 @@
                             </tr>
                           </thead>
                           <tbody id="tbodyProjects">
-                                <?php foreach ($projects as $k =>$d): ?>
+                                <?php foreach ( $projects as $k =>$d ): ?>
+                                <?php if( $d['Thumb']['file'] == null ): ?>
+
+                                <?php $media = Hash::extract($d,'Media.{n}.file'); ?>
+
+                                <?php endif; ?>
+                                
                                 <tr>
                                   <?php echo $this->Form->hidden($d['Project']['id'],array('value'=>$d['Project']['order'],'name'=>'order['.$d['Project']['id'].']')); ?>
                                   <td><?php echo $this->Form->checkbox('id.'.$d['Project']['id'],array('value'=>$d['Project']['id'],'hiddenField'=>false)); ?></td>
                                   <td><?php echo $this->Html->link($d['Project']['name'],array('action'=>'edit',$d['Project']['id'])); ?></td>
-                                  <td><?php echo $this->Html->link($this->Html->image(isset( $d['Thumb']['file']) ?$d['Thumb']['file']:'http://placehold.it/80x80',array('title'=>'Projet '.$d['Project']['name'],'width'=>80,'height'=>80 ,'class'=>'img-thumbnail')),isset( $d['Thumb']['file']) ? $d['Thumb']['file']:'http://placekitten.com/1280/1024',array('escape'=>false,'class'=>'lightbox')); ?>
+                                  <td><?php echo $this->Html->link($this->Html->image(!empty( $d['Thumb']['file']) ?
+                                  $d['Thumb']['file']:$media[0],array('title'=>'Projet '.$d['Project']['name'],'width'=>80,'height'=>80 ,'class'=>'img-thumbnail')),
+                                  !empty( $d['Thumb']['file']) ? $d['Thumb']['file']: $media[0] ,array('escape'=>false,'class'=>'lightbox')); ?>
                                   </td>
                                   <td><?php echo $d['Project']['hidden'] == '1' ? '<span class="label label-danger">Privé</span>' : '<span class="label label-success">Public</span>'; ?></td>
                                   <td><?php echo $this->Html->link($d['Project']['published']== 0? '<span class="label label-danger">Hors ligne</span>' : '<span class="label label-success">En ligne</span>',array('action'=>'publish','controller'=>'projects',$d['Project']['id']),array('escape'=>false),"Voulez vous vraiment publier/dépublier ce projet ?"); ?></td>
