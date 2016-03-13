@@ -45,7 +45,7 @@ class PagesController extends AppController {
  */
 	public $uses = array('Project','Option','Category');
 
-	public $helpers = array('Cache');
+	public $helpers = array('Cache','TwitterCake.TwitterCake');
 
   	public $cacheAction = array(
  	'home'=>'+1 month',
@@ -116,7 +116,10 @@ class PagesController extends AppController {
 
 
         endif;
+
         $this->set(compact('portfolioHome'));
+
+
 
 
         $homeParams = $this->Option->find('first',array('conditions'=>array('name'=>'homeParams')));

@@ -1,9 +1,8 @@
 <?php
-
-class TwitterCakeHelper extends AppHelper{
-
+class TwitterCakeHelper extends AppHelper {
 
 
 
-  
+
+
 }

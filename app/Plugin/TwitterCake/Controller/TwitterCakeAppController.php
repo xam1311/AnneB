@@ -7,5 +7,9 @@ use Abraham\TwitterOAuth\TwitterOAuth;
 
 class TwitterCakeAppController extends AppController {
 
-
+   public function connect($consumerKey,$consumerSecret)
+   {
+     $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token, $access_token_secret);
+     debug($connection);
+   }
 }
