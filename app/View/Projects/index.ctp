@@ -1,7 +1,42 @@
+<?php $this->start('og'); ?>
+
+	<?php echo $this->Html->meta(array('property'=>'og:url'
+	,'block'=>'og'
+	,'type'=>'meta'
+	,'rel'=>null
+	,'content'=>$this->Html->url($canonical,true)
+	,'inline'=>false)); ?>
+	<?php echo $this->Html->meta(array('property'=>'og:type'
+	,'block'=>'og'
+	,'type'=>'meta'
+	,'rel'=>null
+	,'content'=>'article'
+	,'inline'=>false)); ?>
+
+	<?php echo $this->Html->meta(array('property'=>'og:image'
+	,'block'=>'og'
+	,'type'=>'meta'
+	,'rel'=>null
+	,'content'=> $this->Html->url(Hash::extract($lastProjects,'0.Thumbnail.file'),true)
+		,'inline'=>false)); ?>
+
+
 
 <?php if(!empty($category['Category']['description']) and $category['Category']['description'] != ''): ?>
-<?php $description = $category['Category']['description'];?>
+	<?php $description = $category['Category']['description'];?>
+
+		<?php echo $this->Html->meta(array('property'=>'og:description'
+		,'block'=>'og'
+		,'type'=>'meta'
+		,'rel'=>null
+		,'content'=> htmlspecialchars(strip_tags($category['Category']['description']))
+		,'inline'=>false));
+		 ?>
+
 <?php endif; ?>
+
+<?php $this->end(); ?>
+
 <div class="pageContent">
 			<div class="row headerPage">
 				<div class="col-lg-9 col-md-8 col-sm-12 col-xs-12">

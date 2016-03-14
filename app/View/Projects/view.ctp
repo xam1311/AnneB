@@ -189,13 +189,6 @@
 ,'content'=>$this->Html->url($project['Thumbnail']['file'],true)
 ,'inline'=>false)); ?>
 
-<?php echo $this->Html->meta(array('property'=>'og:site_name'
-,'block'=>'og'
-,'type'=>'meta'
-,'rel'=>null
-,'content'=>'Anne-b'
-,'inline'=>false)); ?>
-
 <?php
 if(isset($keywords)and !empty($keywords)):
 

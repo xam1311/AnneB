@@ -1,6 +1,38 @@
 <?php $this->set('title_for_layout','Anne-B Directrice Artistique'); ?>
+
 <?php echo $this->Html->meta('keywords','Directrice artistique, book, portfolio, DA web, webdesign, graphisme, graphiste, direction artistique, ergonomie, newsletter, encart pub, Encart pub, habillage, Habillage,jeux Concours,Jeux concours,Campagne Facebook,campagne facebook, design, responsive webdesign, identité visuelle, création graphique, design graphique,mobile, Mobile, responsive, Responsive, interactive art director,design ui,design ux,Design UX,Design UI,Design ui,Design ux, management, Management',array('inline'=>false)); ?>
 <?php echo $this->Html->meta('description','Directrice artistique, webdesigner, UI designer, je réalise le webdesign de vos sites web & mobiles – Besoin d’un directeur artistique : Anne Berland',array('inline'=>false)); ?>
+<?php $this->start('og'); ?>
+
+	<?php echo $this->Html->meta(array('property'=>'og:url'
+	,'block'=>'og'
+	,'type'=>'meta'
+	,'rel'=>null
+	,'content'=>Router::fullbaseUrl()
+	,'inline'=>false)); ?>
+	<?php echo $this->Html->meta(array('property'=>'og:type'
+	,'block'=>'og'
+	,'type'=>'meta'
+	,'rel'=>null
+	,'content'=>'website'
+	,'inline'=>false)); ?>
+	<?php echo $this->Html->meta(array('property'=>'og:description'
+	,'block'=>'og'
+	,'type'=>'meta'
+	,'rel'=>null
+	,'content'=>'Directrice artistique, webdesigner, UI designer, je réalise le webdesign de vos sites web & mobiles – Besoin d’un directeur artistique : Anne Berland'
+	,'inline'=>false)); ?>
+
+
+	<?php echo $this->Html->meta(array('property'=>'og:image'
+	,'block'=>'og'
+	,'type'=>'meta'
+	,'rel'=>null
+	,'content'=> $this->Html->url(Hash::extract($portfolioHome,'0.Thumbnail.file'),true)
+		,'inline'=>false)); ?>
+
+<?php $this->end(); ?>
+
 <?php echo $this->Html->css(array('front/portfolio.css'),array('inline'=>false)); ?>
 <div class="homePage pageContent text-left">
 <div class="row headerPage homePage-header">

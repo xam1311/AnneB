@@ -11,6 +11,29 @@
 			</div>
 	</div>
 </div><!-- .headerPage -->
+<?php $this->start('og'); ?>
+
+	<?php echo $this->Html->meta(array('property'=>'og:url'
+	,'block'=>'og'
+	,'type'=>'meta'
+	,'rel'=>null
+	,'content'=>$this->Html->url($canonical,true)
+	,'inline'=>false)); ?>
+	<?php echo $this->Html->meta(array('property'=>'og:type'
+	,'block'=>'og'
+	,'type'=>'meta'
+	,'rel'=>null
+	,'content'=>'article'
+	,'inline'=>false)); ?>
+
+	<?php echo $this->Html->meta(array('property'=>'og:image'
+	,'block'=>'og'
+	,'type'=>'meta'
+	,'rel'=>null
+	,'content'=> $this->Html->url(Hash::extract($projectsType,'0.Thumbnail.file'),true)
+		,'inline'=>false)); ?>
+
+<?php $this->end(); ?>
 <?php echo $this->Html->meta('canonical',$this->Html->url($canonical,true),array('rel'=>'canonical','type'=>null, 'title'=>'Anne-b projet du type'.$typeHumanize,'inline'=>false)); ?>
 <?php echo $this->element('portfolio',array('tags'=>$tags,'projects'=>$projectsType,'private'=>$private,'description'=>'')); ?>
 </div><!-- pageContent-->
