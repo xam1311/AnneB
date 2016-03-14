@@ -11,7 +11,7 @@
 			</div>
 	</div>
 </div><!-- .headerPage -->
-<?php echo $this->Html->meta('canonical',$this->Html->url($canonical,true),array('rel'=>'canonical','type'=>null, 'title'=>'Anne-b projet du Type'.$typeHumanize,'inline'=>false)); ?>
+<?php echo $this->Html->meta('canonical',$this->Html->url($canonical,true),array('rel'=>'canonical','type'=>null, 'title'=>'Anne-b projet du type'.$typeHumanize,'inline'=>false)); ?>
 <?php echo $this->element('portfolio',array('tags'=>$tags,'projects'=>$projectsType,'private'=>$private,'description'=>'')); ?>
 </div><!-- pageContent-->
 <?php echo $this->Html->script(array('front/jquery.mixitup.min','front/portfolio.js'),array('inline'=>false)); ?>

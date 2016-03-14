@@ -3,6 +3,7 @@
 <head>
 	<?php echo $this->Html->charset(); ?>
 	<title><?php echo $title_for_layout; ?></title>
+	<?php echo $this->fetch('og'); ?>
 	<?php
 		echo $this->Html->meta(array('rel'=>'apple-touch-icon-precomposed','sizes'=>'57x57','link'=>'img/icon/apple-touch-icon-57x57.png'));
 		echo $this->Html->meta(array('rel'=>'apple-touch-icon-precomposed','sizes'=>'114x114','link'=>'img/icon/apple-touch-icon-114x114.png'));
@@ -46,6 +47,7 @@
 
 <style media="screen">
 	.cake-debug-output{
+		color:#ffffff;
 		background-color: #303030;
 		padding: 10px;
 	}

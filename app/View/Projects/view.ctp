@@ -101,12 +101,12 @@
 		</section>
 </div>
 
-
 <?php if( isset($project['Media']) and !empty($project['Media'])): ?>
 
 
 		<div class="row pageprojet-contentslider pageContent">
 			 <div class="col-lg-12 col-md-12 col-xs-12">
+
 
 			<?php if(count($project['Media']) > 1 ) : ?>
 				<div id="carousel-project" class="carousel slide" data-ride="carousel">
@@ -117,17 +117,19 @@
 								  </ol>
 								  <div class="carousel-inner" role="listbox">
 
-								      <?php foreach ($project['Media'] as $k =>$v): ?>
-										<div class="item <?php echo ($k==0) ?'active' : '';?>">
-										<?php echo $this->Html->image($v['file'],array('width'=>1200,'height'=>645,'class'=>'','fullBase'=>true,'style'=>'margin: 0 auto;')); ?>
-												<div class="carousel-caption">
-			     								 </div>
-										</div>
+								    <?php foreach ($project['Media'] as $k =>$v): ?>
+
+												<div class="item <?php echo ($k==0) ?'active' : '';?>">
+
+												<?php echo $this->Html->image($v['file'],array('width'=>1200,'height'=>645,'class'=>'','fullBase'=>true,'style'=>'margin: 0 auto;')); ?>
+														<div class="carousel-caption">
+
+														</div>
+												</div>
+
 									  <?php endforeach; ?>
 
-
 								  </div>
-
 								  <!-- Controls -->
 								  <a class="left carousel-control" href="#carousel-project" role="button" data-slide="prev">
 								    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -148,25 +150,85 @@
 
 <?php endif; ?>
 </div>
+
+<?php $this->start('og'); ?>
+
+
 <?php echo $this->Html->meta('canonical',$this->Html->url($project['Project']['link'],true),array('rel'=>'canonical','type'=>null, 'title'=>'Anne-b - '.$project['Project']['name'],'inline'=>false)); ?>
+<?php echo $this->Html->meta(array('property'=>'og:title'
+,'block'=>'og'
+,'type'=>'meta'
+,'rel'=>null
+,'content'=>$project['Project']['name']
+,'inline'=>false)); ?>
+
+<?php echo $this->Html->meta(array('property'=>'og:type'
+,'block'=>'og'
+,'type'=>'meta'
+,'rel'=>null
+,'content'=>'article'
+,'inline'=>false)); ?>
+<?php echo $this->Html->meta(array('property'=>'og:url'
+,'block'=>'og'
+,'type'=>'meta'
+,'rel'=>null
+,'content'=>$this->Html->url($project['Project']['link'],true)
+,'inline'=>false)); ?>
+
+<?php echo $this->Html->meta(array('property'=>'og:locale'
+,'block'=>'og'
+,'type'=>'meta'
+,'rel'=>null
+,'content'=>'fr_FR'
+,'inline'=>false)); ?>
+
+<?php echo $this->Html->meta(array('property'=>'og:image'
+,'block'=>'og'
+,'type'=>'meta'
+,'rel'=>null
+,'content'=>$this->Html->url($project['Thumbnail']['file'],true)
+,'inline'=>false)); ?>
+
+<?php echo $this->Html->meta(array('property'=>'og:site_name'
+,'block'=>'og'
+,'type'=>'meta'
+,'rel'=>null
+,'content'=>'Anne-b'
+,'inline'=>false)); ?>
 
 <?php
-	if(isset($keywords)and !empty($keywords)):
+if(isset($keywords)and !empty($keywords)):
+
 		echo $this->Html->meta('keywords',strtolower($this->Text->toList($keywords,',')),array('inline'=>false));
-	endif; ?>
+
+endif; ?>
 
 <?php if(isset($project['Project']['meta_description']) and !empty($project['Project']['meta_description'])): ?>
 
 <?php echo $this->Html->meta('description',$project['Project']['meta_description'],array('inline'=>false));?>
+
+<?php echo $this->Html->meta(array('property'=>'og:description'
+,'block'=>'og'
+,'type'=>'meta'
+,'rel'=>null
+,'content'=>$project['Project']['meta_description']
+,'inline'=>false)); ?>
 <?php endif;?>
+
+
+
+
+<?php $this->end(); ?> <!-- Fin de la balise og-->
 
 <?php if($project['Project']['hidden'] == 1):
 
 	echo $this->Html->meta(array('name' => 'robots', 'content' => 'noindex,nofollow'),null,array('inline'=>false));
+
 	else:
 
 	echo $this->Html->meta(array('name' => 'robots', 'content' => 'index,follow'),null,array('inline'=>false));
-	endif; ?>
+
+endif; ?>
 
 <?php if(count($project['Media']) > 1): ?>
 
