@@ -163,14 +163,7 @@
 ,'block'=>'twittercard'
 ,'type'=>'meta'
 ,'rel'=>null
-,'content'=>'@AnneB'
-,'inline'=>false)); ?>
-
-<?php echo $this->Html->meta(array('property'=>'twitter:creator'
-,'block'=>'og'
-,'type'=>'meta'
-,'rel'=>null
-,'content'=>'@creaAnneb'
+,'content'=>'@CreaAnneB'
 ,'inline'=>false)); ?>
 
 <?php echo $this->Html->meta(array('property'=>'twitter:title'
