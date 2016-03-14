@@ -26,10 +26,10 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	 <?php
-	  echo $this->Html->css(array('http://fonts.googleapis.com/css?family=Raleway:400,500,600,700,300,200|Montserrat:400,700'));
+	  echo $this->Html->css(array('https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,300,200|Montserrat:400,700'));
 		echo $this->Html->css(array('front/bootstrap.min.css','front/main.css','front/responsive.css','front/icomoon.css','front/sprite.css'));
 		echo $this->fetch('css');
-		echo $this->Html->script(array('http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js','front/bootstrap.min.js','front/velocity.js','front/velocityui.js','front/main.js','http://localhost:35729/livereload.js'),array('inline'=>false,'block'=>'bHeadscript'));?>
+		echo $this->Html->script(array('https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js','front/bootstrap.min.js','front/velocity.js','front/velocityui.js','front/main.js'),array('inline'=>false,'block'=>'bHeadscript'));?>
 <?php if(Configure::read('debug') == 0 ):?>
 		<!-- Google Analytics -->
 		<script>
