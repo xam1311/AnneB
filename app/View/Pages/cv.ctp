@@ -1,6 +1,33 @@
 <?php $this->set('title_for_layout','CV Anne-b Directrice artistique sénior'); ?>
 <?php echo $this->Html->meta('keywords','Directrice artistique,ux design, ui design, Directeur artistique, book, portfolio, DA web, webdesign, graphisme, graphiste, direction artistique, ergonomie, design, responsive webdesign, identité visuelle, création graphique, design graphique, interactive art director',array('inline'=>false)); ?>
 <?php echo $this->Html->meta('description','CV - Directrice artistique depuis plus de 8 ans, passionnée par le webdesign. Découvrez mon book et cv de directeur artistique : Anne Berland',array('inline'=>false)); ?>
+<?php $this->start('og'); ?>
+<?php echo $this->Html->meta(array('property'=>'og:title'
+,'block'=>'og'
+,'type'=>'meta'
+,'rel'=>null
+,'content'=>'CV Anne-b Directrice artistique sénior'
+,'inline'=>false)); ?>
+	<?php echo $this->Html->meta(array('property'=>'og:url'
+	,'block'=>'og'
+	,'type'=>'meta'
+	,'rel'=>null
+	,'content'=>$this->Html->url(array('controller'=>'contact','action'=>'index'))
+	,'inline'=>false)); ?>
+	<?php echo $this->Html->meta(array('property'=>'og:type'
+	,'block'=>'og'
+	,'type'=>'meta'
+	,'rel'=>null
+	,'content'=>'article'
+	,'inline'=>false)); ?>
+	<?php echo $this->Html->meta(array('property'=>'og:description'
+	,'block'=>'og'
+	,'type'=>'meta'
+	,'rel'=>null
+	,'content'=>'CV - Directrice artistique depuis plus de 8 ans, passionnée par le webdesign. Découvrez mon book et cv de directeur artistique : Anne Berland'
+	,'inline'=>false)); ?>
+
+<?php $this->end(); ?>
 <div class="<?php echo $this->params->url ?>Page pageContent text-left">
 		<div class="row headerPage cvPage-header">
 			<div class="col-lg-7 col-md-7 col-xs-12">

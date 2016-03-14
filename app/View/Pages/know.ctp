@@ -1,4 +1,24 @@
 <?php $this->set('title_for_layout','Me connaître : Anne Berland'); ?>
+<?php $this->start('og'); ?>
+		<?php echo $this->Html->meta(array('property'=>'og:title'
+		,'block'=>'og'
+		,'type'=>'meta'
+		,'rel'=>null
+		,'content'=>'Contact Anne Berland'
+		,'inline'=>false)); ?>
+		<?php echo $this->Html->meta(array('property'=>'og:url'
+		,'block'=>'og'
+		,'type'=>'meta'
+		,'rel'=>null
+		,'content'=>$this->Html->url(array('controller'=>'pages','action'=>'display','know'))
+		,'inline'=>false)); ?>
+		<?php echo $this->Html->meta(array('property'=>'og:type'
+		,'block'=>'og'
+		,'type'=>'meta'
+		,'rel'=>null
+		,'content'=>'article'
+		,'inline'=>false)); ?>
+<?php $this->end(); ?>
 <div class="pageContent">
 	<div class="row headerPage knowPage-title">
 		<div class="col-lg-2 col-md-3 col-xs-12">
