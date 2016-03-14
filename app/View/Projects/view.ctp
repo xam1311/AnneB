@@ -151,10 +151,56 @@
 <?php endif; ?>
 </div>
 
+<?php $this->start('twittercard'); ?>
+
+<?php echo $this->Html->meta(array('property'=>'twitter:card'
+,'block'=>'twittercard'
+,'type'=>'meta'
+,'rel'=>null
+,'content'=>'summary_large_image'
+,'inline'=>false)); ?>
+<?php echo $this->Html->meta(array('property'=>'twitter:site'
+,'block'=>'twittercard'
+,'type'=>'meta'
+,'rel'=>null
+,'content'=>'@AnneB'
+,'inline'=>false)); ?>
+
+<?php echo $this->Html->meta(array('property'=>'twitter:creator'
+,'block'=>'og'
+,'type'=>'meta'
+,'rel'=>null
+,'content'=>'@creaAnneb'
+,'inline'=>false)); ?>
+
+<?php echo $this->Html->meta(array('property'=>'twitter:title'
+,'block'=>'twittercard'
+,'type'=>'meta'
+,'rel'=>null
+,'content'=>$project['Project']['name']
+,'inline'=>false)); ?>
+
+<?php echo $this->Html->meta(array('property'=>'twitter:description'
+,'block'=>'twittercard'
+,'type'=>'meta'
+,'rel'=>null
+,'content'=>$project['Project']['meta_description']
+,'inline'=>false)); ?>
+
+<?php echo $this->Html->meta(array('property'=>'twitter:image'
+,'block'=>'twittercard'
+,'type'=>'meta'
+,'rel'=>null
+,'content'=>$this->Html->url($project['Thumbnail']['file'],true)
+,'inline'=>false)); ?>
+
+<?php $this->end(); ?>
+
 <?php $this->start('og'); ?>
 
 
 <?php echo $this->Html->meta('canonical',$this->Html->url($project['Project']['link'],true),array('rel'=>'canonical','type'=>null, 'title'=>'Anne-b - '.$project['Project']['name'],'inline'=>false)); ?>
+
 <?php echo $this->Html->meta(array('property'=>'og:title'
 ,'block'=>'og'
 ,'type'=>'meta'
@@ -206,6 +252,7 @@ endif; ?>
 ,'rel'=>null
 ,'content'=>$project['Project']['meta_description']
 ,'inline'=>false)); ?>
+
 <?php endif;?>
 
 
