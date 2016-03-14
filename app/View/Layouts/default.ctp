@@ -1,5 +1,5 @@
-<?php echo $this->Html->docType('html5'); ?>
-<html lang="fr-fr">
+<?php echo $this->Html->docType(); ?>
+<html lang="fr-fr" prefix="og: http://ogp.me/ns#">
 <head>
 	<?php echo $this->Html->charset(); ?>
 	<title><?php echo $title_for_layout; ?></title>
