@@ -166,12 +166,12 @@
 ,'content'=>'@CreaAnneB'
 ,'inline'=>false)); ?>
 
-<?php ?php echo $this->Html->meta(array('property'=>'twitter:author'
+<?php echo $this->Html->meta(array('property'=>'twitter:author'
 ,'block'=>'twittercard'
 ,'type'=>'meta'
 ,'rel'=>null
 ,'content'=>'@CreaAnneB'
-,'inline'=>false)); ?> ?>
+,'inline'=>false)); ?>
 
 <?php echo $this->Html->meta(array('property'=>'twitter:title'
 ,'block'=>'twittercard'
