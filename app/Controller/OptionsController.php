@@ -11,6 +11,8 @@ public function admin_index()
           App::uses('File', 'Utility');
 
           $dir = new Folder(LOGS);
+
+          /* Voir pour avoir plusieurs logs et scroll */
           $fileActivity = $dir->find('activity.log');
 
           if($fileActivity):
@@ -304,6 +306,7 @@ function admin_deleteCache()
     if(function_exists('Memcached::flush')):
        Memcached::flush();
     endif;
+    $this->log("Le cache a été rafraîchi",'activity');
     $this->Session->setFlash("Le cache a été rafraïchi",'notif',array('type'=>'info'));
     $this->redirect(array('controller'=>'options','action' => 'index'));
 }

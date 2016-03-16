@@ -9,7 +9,7 @@
                   <ul class="nav nav-pills nav-stacked" role="tablist" id="tabSite">
                     <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Page d'accueil</a></li>
                     <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Paramètres site</a></li>
-                    <li role="presentation"><a href="#activity" aria-controls="activity" role="tab" data-toggle="tab">Fichiers log</a></li>
+                    <li role="presentation"><a href="#activity" aria-controls="activity" role="tab" data-toggle="tab">Log système</a></li>
                     <li role="presentation"><a href="#cache" aria-controls="cache" role="tab" data-toggle="tab">Cache système</a></li>
                   </ul>
               </div>
@@ -159,7 +159,7 @@
                        <div class="col-lg-12 col-md-12 col-sm-12">
 
                          <div class="panel panel-default">
-                          <div class="panel-body">
+                          <div class="panel-body" style="max-height:100px;">
                             <?php if(isset($activityLog)): ?>
                                 <?php echo nl2br($activityLog,true); ?>
                             <?php endif; ?>
