@@ -18,7 +18,10 @@ public function admin_index()
           if($fileActivity):
 
               $file = new File($dir->pwd() . DS .$fileActivity[0]);
-              $activityLog = $file->read(true,'r');
+              $activityLog = explode("\n",$file->read(true,'r'));
+              $activityLog = implode("\n",array_reverse($activityLog, true));
+              die();
+
               $this->set('activityLog',$activityLog);
 
           endif;

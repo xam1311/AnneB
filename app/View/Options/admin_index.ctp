@@ -159,7 +159,7 @@
                        <div class="col-lg-12 col-md-12 col-sm-12">
 
                          <div class="panel panel-default">
-                          <div class="panel-body" style="max-height:100px;">
+                          <div class="panel-body" style="max-height:400px; overflow-y:scroll;">
                             <?php if(isset($activityLog)): ?>
                                 <?php echo nl2br($activityLog,true); ?>
                             <?php endif; ?>

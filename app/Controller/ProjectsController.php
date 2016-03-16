@@ -504,11 +504,11 @@ class ProjectsController extends AppController {
                               $this->redirect(array('action' => 'index'));
                             endif;
 
-                            $this->log("Le projet ".$data['Project']['name'].' a été modifié','activity');
+                            $this->log('Le projet "'.$data['Project']['name'].'" a été modifié','activity');
 
                         } else {
                             $this->request->data = $this->Project->read();
-                            $this->log("Impossible de mettre à jour Le projet ".$data['Project']['name'],'activity');
+                            $this->log('Impossible de mettre à jour Le projet "'.$data['Project']['name'].'"','activity');
                             $this->Session->setFlash('Impossible de mettre à jour le projet "'.$this->Project->field('name').'"','notif',array('type'=>'danger'));
                         }
                 }
