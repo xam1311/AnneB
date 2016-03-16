@@ -267,15 +267,45 @@ function admin_deleteSlides()
 {
 
     $verif= $this->Option->find('first',array('condition'=>array('name'=>'slideProject')));
+
     if($verif):
-    $nbrSlide=Hash::extract(json_decode($verif['Option']['value'],true),'{n}.nbrSlide');
-    $v = array('value'=>json_encode(array('nbrSlide'=>$nbrSlide[0])));
-    $this->Option->id = $verif['Option']['id'];
-    $this->Option->saveField('value',$v['value']);
-    $this->Session->setFlash("Il n'y a plus de projet sélectionné pour le slider",'notif',array('type'=>'info'));
+      $nbrSlide=Hash::extract(json_decode($verif['Option']['value'],true),'{n}.nbrSlide');
+      $v = array('value'=>json_encode(array('nbrSlide'=>$nbrSlide[0])));
+      $this->Option->id = $verif['Option']['id'];
+      $this->Option->saveField('value',$v['value']);
+      $this->Session->setFlash("Il n'y a plus de projet sélectionné pour le slider",'notif',array('type'=>'info'));
     endif;
+
     $this->redirect(array('controller'=>'options','action' => 'index'));
 
+}
+
+function admin_deleteCache()
+{
+    $this->autoRender = false;
+    Cache::clear();
+    clearCache();
+    $files = array();
+    $files = array_merge($files, glob(CACHE . '*')); // remove cached css
+    $files = array_merge($files, glob(CACHE . 'css' . DS . '*')); // remove cached css
+    $files = array_merge($files, glob(CACHE . 'js' . DS . '*'));  // remove cached js
+    $files = array_merge($files, glob(CACHE . 'models' . DS . '*'));  // remove cached models
+    $files = array_merge($files, glob(CACHE . 'persistent' . DS . '*'));  // remove cached persistent
+    foreach ($files as $f) {
+            if (is_file($f)) {
+                unlink($f);
+            }
+    }
+
+    if(function_exists('apc_clear_cache')):
+        apc_clear_cache();
+        apc_clear_cache('user');
+    endif;
+    if(function_exists('Memcached::flush')):
+       Memcached::flush();
+    endif;
+    $this->Session->setFlash("Le cache a été rafraïchi",'notif',array('type'=>'info'));
+    $this->redirect(array('controller'=>'options','action' => 'index'));
 }
 
 function footerIndex()
