@@ -11,19 +11,12 @@ class Project extends AppModel {
         'Media.Media' => array(
         )
     );
-
      public $validate = array(
         'name' => array(
-
            'minLength'=>array(
             'rule'=>array('minLength','3'),
             'message'=>'3 caractères minimum'
-            )/*,
-           'alphaNumeric'=>array(
-            'rule'=>'alphaNumeric',
-            'required'=>true,
-            'message'=>'Seulement des chiffres et lettres'
-            )*/
+            )
         ),
         'website' => array(
              'url'=>array(
@@ -157,10 +150,26 @@ class Project extends AppModel {
 
 		 public function afterSave($created,$options= array())
 		 {
-			 /*debug($this->data);debug($created);
-			 $boolean = clearCache($this->data['Project']['name']);
-			 debug($boolean);
-			 exit();*/
-			 clearCache();
+			 Cache::clear();
+	     clearCache();
+	     $files = array();
+	     $files = array_merge($files, glob(CACHE . '*')); // remove cached css
+	     $files = array_merge($files, glob(CACHE . 'css' . DS . '*')); // remove cached css
+	     $files = array_merge($files, glob(CACHE . 'js' . DS . '*'));  // remove cached js
+	     $files = array_merge($files, glob(CACHE . 'models' . DS . '*'));  // remove cached models
+	     $files = array_merge($files, glob(CACHE . 'persistent' . DS . '*'));  // remove cached persistent
+	     foreach ($files as $f) {
+	             if (is_file($f)) {
+	                 unlink($f);
+	             }
+	     }
+
+	     if(function_exists('apc_clear_cache')):
+	         apc_clear_cache();
+	         apc_clear_cache('user');
+	     endif;
+	     if(function_exists('Memcached::flush')):
+	        Memcached::flush();
+	     endif;
 		 }
 }
