@@ -312,6 +312,29 @@ function admin_deleteCache()
     $this->redirect(array('controller'=>'options','action' => 'index'));
 }
 
+function admin_renewProjets(){
+         $needle = 'http://anne-b.fr';
+         $this->Project->unbindModel(
+         array('hasMany' => array('Media'),'hasAndBelongsToMany'=>array('Taxonomy.Taxonomy'))
+         );
+         $this->Project->Behaviors->unload('Taxonomy.Taxonomy');
+
+
+         $projets = $this->Project->find('all',array('fields'=>array('Project.description','Project.id')));
+         foreach ( $projets as $k => $projet) :
+                  $description = $projet['Project']['description'];
+                  if( !empty($description)):
+                           if( stripos($description, $needle)):
+                           $newDescription = str_ireplace($needle,'https://anne-b.fr',$projet['Project']['description'],$count);
+
+                           $this->Project->id = $projet['Project']['id'];
+                           $this->Project->saveField('description',$newDescription);
+                           endif;
+                  endif;
+         endforeach;
+
+         $this->redirect(array('controller'=>'options','action' => 'index'));
+}
 function footerIndex()
 
 {

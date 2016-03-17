@@ -10,7 +10,7 @@
                     <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Page d'accueil</a></li>
                     <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Paramètres site</a></li>
                     <li role="presentation"><a href="#activity" aria-controls="activity" role="tab" data-toggle="tab">Log système</a></li>
-                    <li role="presentation"><a href="#cache" aria-controls="cache" role="tab" data-toggle="tab">Cache système</a></li>
+                    <li role="presentation"><a href="#system" aria-controls="cache" role="tab" data-toggle="tab">Outils système</a></li>
                   </ul>
               </div>
               <div class="col-lg-9 col-md-9 col-xs-12">
@@ -170,15 +170,26 @@
 
                      </div>
                   </div><!-- Fin du tab #activity-->
-                  <div role="tabpanel" class="tab-pane" id="cache">
-                     <h4 class="well well-sm">Rafraîchir le cache du site</h4>
+                  <div role="tabpanel" class="tab-pane" id="system">
+                     <h4 class="well well-sm">Outils système</h4>
                      <div class="row">
                        <div class="col-lg-12 col-md-12 col-sm-12">
                          <div class="panel panel-default">
+                               <div class="panel-heading">
+                                 <h5 class="panel-title">Rafraîchir le cache</h5>
+                                </div>
                           <div class="panel-body">
                             <?php echo $this->Form->postButton('Effacer le cache',array('controller'=>'options','action'=>'deleteCache'),array('class'=>'btn btn-primary','confirm'=>'êtes vous sûr?')); ?>
                           </div>
                         </div>
+                        <div class="panel panel-default">
+                              <div class="panel-heading">
+                                <h5 class="panel-title">Changer lien https contenu projet</h5>
+                              </div>
+                        <div class="panel-body">
+                           <?php echo $this->Form->postButton('Maj projets',array('controller'=>'options','action'=>'renewProjets'),array('class'=>'btn btn-primary','confirm'=>'êtes vous sûr?')); ?>
+                        </div>
+                       </div>
                        </div>
                      </div>
                   </div><!-- Fin du tab #activity-->
