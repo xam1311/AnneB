@@ -329,6 +329,7 @@ function admin_renewProjets(){
 
                            $this->Project->id = $projet['Project']['id'];
                            $this->Project->saveField('description',$newDescription);
+
                            endif;
                   endif;
          endforeach;
