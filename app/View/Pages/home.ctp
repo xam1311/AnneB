@@ -10,6 +10,12 @@
 	,'rel'=>null
 	,'content'=>Router::fullbaseUrl()
 	,'inline'=>false)); ?>
+	<?php echo $this->Html->meta(array('property'=>'og:title'
+	,'block'=>'og'
+	,'type'=>'meta'
+	,'rel'=>null
+	,'content'=>$titreSite
+	,'inline'=>false)); ?>
 	<?php echo $this->Html->meta(array('property'=>'og:type'
 	,'block'=>'og'
 	,'type'=>'meta'

@@ -2,6 +2,7 @@
 <html lang="fr-fr" prefix="og: http://ogp.me/ns#">
 <head>
 	<?php echo $this->Html->charset(); ?>
+
 	<title><?php echo $title_for_layout; ?></title>
 	<?php echo $this->fetch('og'); ?>
 	<?php echo $this->fetch('twittercard'); ?>
@@ -32,16 +33,8 @@
 		echo $this->Html->script(array('https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js','front/bootstrap.min.js','front/velocity.js','front/velocityui.js','front/main.js'),array('inline'=>false,'block'=>'bHeadscript'));?>
 <?php if(Configure::read('debug') == 0 ):?>
 		<!-- Google Analytics -->
-		<script>
-			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		<?php  echo $this->Html->script(array('https://ssl.google-analytics.com/analytics.js','front/analytics.js'),array('inline'=>false,'block'=>'bHeadscript'));?>
 
-			ga('create', 'UA-4089495-1', 'auto');
-			ga('send', 'pageview');
-
-		</script>
 <!-- End Google Analytics -->
 <?php endif;?>
 <?php if(Configure::read('debug') > 0 ):?>
